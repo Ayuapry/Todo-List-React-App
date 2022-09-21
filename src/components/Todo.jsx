@@ -1,0 +1,25 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { FaTrash } from 'react-icons/fa';
+import { BsFillPencilFill } from 'react-icons/bs';
+import '../App.css'
+
+export default function TodoItem({ item, removeHandler, UpdateComplete }) {
+
+  const onChange = (e) => {
+    UpdateComplete(e.target.checked);
+  }
+
+  return (
+    <div >
+      <div className="todo">
+        <div className="todo todo-list">
+          <li>{item.task}</li>
+          <input type="checkbox" checked={item.complete} onChange={onChange} />
+          <Link to ={`/Edit/${item.id}`} className="btn-icon pncl"><BsFillPencilFill /></Link>
+          <button onClick={() => removeHandler(item.id)} className="btn-icon trsh"><FaTrash /></button>
+        </div>
+      </div>
+    </div>
+  );
+}
