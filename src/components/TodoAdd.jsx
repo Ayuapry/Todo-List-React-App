@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate,Link } from "react-router-dom";
+import { FaBook } from 'react-icons/fa';
 import '../App.css'
 
 export default function Add({ setData }) {
@@ -22,11 +23,16 @@ export default function Add({ setData }) {
   return (
     <div>
       <h1>Todo Input</h1>
-      <form className="container add__container">
+      <div className="container add__container">
+      <div className="input-container">
+        <i className="icon"><FaBook /></i>
         <input type="text" value={task} onChange={onChange} placeholder="Input Todo ..." required />
+      </div>
+      <div>
         <button onClick={inputTaskHandler} className="btn adds">Submit</button>
         <Link to="/" className='btn adds'>cancel</Link>
-      </form>
+      </div>
+      </div>
     </div>
   );
 }
