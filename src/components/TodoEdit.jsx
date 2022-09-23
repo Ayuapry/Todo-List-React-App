@@ -1,30 +1,43 @@
 import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-
+import { useNavigate, useParams, Link } from "react-router-dom";
+import { FaBook } from 'react-icons/fa';
+import Data from '../data.json'
+import '../App.css'
 
 export default function Edit({ setData, data }) {
-  const { id } = useParams();
-  const item = data.find((el) => el.id === id);
-
   const navigate = useNavigate();
-  const [task, setTask] = useState(item.task);
+  const { id } = useParams();
+  const item = Data.find((item) => 
+    item.id === Number(id)
+  );
 
+  const [task, setTask] = useState(item.task);
   const editTaskHandler =() => {
-    const newTask = { id: id, task: task, complete: false };
+    const newTask = { 
+      id: id, 
+      task: task, 
+      complete: false 
+    };
     setData((data) => [...data, newTask]);
     navigate("/");
   }
+  const onChange = (e) => {
+    setTask(e.target.value);
+  }
+
   return (
     <div>
-      <div>
         <h1>Todo Edit</h1>
-          <input
-            value={task}
-            onChange={(e) => setTask(e.target.value)}
-            placeholder="Input/Edit Todo"
-          />
-          <button onClick={editTaskHandler}> Submit</button>
-      </div>
+        <div className="container add__container">
+          <div className="input-container">
+            <i className="icon"><FaBook /></i>
+            <input type="text" value={task} onChange={onChange} placeholder="Edit Todo" />
+          </div>
+          <div>
+            <button onClick={editTaskHandler} className="btn adds">Submit</button>
+            <Link to="/" className='btn adds cancel'>cancel</Link>
+          </div>
+        </div>
     </div>
   );
 }

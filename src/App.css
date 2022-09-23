@@ -76,6 +76,10 @@ header{
   transition-duration: 0.4s;
   margin-right: 5px;
 }
+.cancel{
+  padding-top: 5px;
+  height: 38.5px;
+}
 .lg{
   width: 99.7%;
 }
@@ -101,14 +105,8 @@ header{
   margin: 3rem 5px 3rem 5px;
 }
 
-.btn:hover{
-  background: var(--color-hover-1);
-  color: var(--color-white);
-  border-color: var(--color-white);
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-.btn-delete:hover{
-  background: var(--color-hover-2);
+.btn:hover, .btn-delete:hover{
+  background: var(--color-outline);
   color: var(--color-white);
   border-color: var(--color-white);
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
@@ -134,7 +132,7 @@ input[type=text] {
   padding: 5px;
   cursor: pointer;
 }
-.completed {
+.complete {
   text-decoration: line-through;
   opacity: 0.5;
 }

@@ -26,11 +26,11 @@ export default function Add({ setData }) {
       <div className="container add__container">
       <div className="input-container">
         <i className="icon"><FaBook /></i>
-        <input type="text" value={task} onChange={onChange} placeholder="Input Todo ..." required />
+        <input type="text" value={task} onChange={onChange} placeholder="Input Todo ..."  />
       </div>
       <div>
         <button onClick={inputTaskHandler} className="btn adds">Submit</button>
-        <Link to="/" className='btn adds'>cancel</Link>
+        <Link to="/" className='btn adds cancel'>cancel</Link>
       </div>
       </div>
     </div>

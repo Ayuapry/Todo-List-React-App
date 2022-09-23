@@ -10,7 +10,7 @@ export default function TodoSearch({ search, setSearch, filter }) {
 
   return (
     <div className='container top__container'>
-        <div class="top__left">
+        <div className="top__left">
             <div className="input-container">
                 <i className="icon"><BsSearch /></i>
                 <input 

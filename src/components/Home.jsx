@@ -30,6 +30,10 @@ export default function Home({ data, setData }) {
     setFilteredTodos(data);
   }, [data]);
 
+  
+
+  
+
   return (
     <div>
       <header>
