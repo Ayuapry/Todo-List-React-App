@@ -14,9 +14,7 @@ export default function Edit({ setData, data }) {
   const [task, setTask] = useState(item.task);
   const editTaskHandler =() => {
     const newTask = { 
-      id: id, 
       task: task, 
-      complete: false 
     };
     setData((data) => [...data, newTask]);
     navigate("/");

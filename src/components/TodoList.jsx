@@ -1,5 +1,6 @@
 import Todo from "./Todo";
 import React from "react";
+// import Data from '../data.json'
 
 export default function todoList({ Data, setData, filter, setFilteredTodos }) {
   const removeHandler = (id) => {
@@ -23,6 +24,19 @@ export default function todoList({ Data, setData, filter, setFilteredTodos }) {
     setData([...newData]);
   }
 
+  const handleChekboxChange=(id)=>{
+    
+    const newTodoList = Data.map(item =>{
+      if(item.id=== Number(id))
+      if(item.complete === false){
+        return{...item, complete:! item.complete}
+      }
+      return item; 
+    })
+    console.log(newTodoList)
+    setData(newTodoList)
+  }
+
   return (
     <div className="container bottom__container">
       <div>
@@ -36,6 +50,7 @@ export default function todoList({ Data, setData, filter, setFilteredTodos }) {
             item={item}
             removeHandler={removeHandler}
             UpdateComplete={(checked) => UpdateComplete(checked, index)}
+            handleChange={handleChekboxChange}
           />
         ))}
       </div>
