@@ -29,7 +29,7 @@ export default function Add({ setData }) {
         <input type="text" value={task} onChange={onChange} placeholder="Input Todo ..."  />
       </div>
       <div>
-        <button onClick={inputTaskHandler} className="btn adds">Submit</button>
+        <button onClick={inputTaskHandler} className="btn adds">submit</button>
         <Link to="/" className='btn adds cancel'>cancel</Link>
       </div>
       </div>

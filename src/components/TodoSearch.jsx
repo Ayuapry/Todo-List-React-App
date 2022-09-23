@@ -15,7 +15,7 @@ export default function TodoSearch({ search, setSearch, filter }) {
                 <i className="icon"><BsSearch /></i>
                 <input 
                 type="text"
-                placeholder="Search Todo ..."
+                placeholder="Search Todo ...."
                 value={search}
                 onChange={onChange}
                 />

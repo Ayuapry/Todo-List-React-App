@@ -5,9 +5,7 @@ import { BsFillPencilFill } from 'react-icons/bs';
 import '../App.css'
 
 export default function TodoItem({ item, complete, removeHandler, UpdateComplete, handleChange}) {
-  // const onChange = (e) => {
-  //   UpdateComplete(e.target.checked);
-  // }
+
   const hanldeCheckboxChange=()=>{
     if(item.complete)
         return null;

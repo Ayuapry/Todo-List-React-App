@@ -37,7 +37,7 @@ export default function Home({ data, setData }) {
   return (
     <div>
       <header>
-        <h1>TodoSearch</h1>
+        <h1>Todo Search</h1>
       </header>
       <div>
       <div>
@@ -50,7 +50,7 @@ export default function Home({ data, setData }) {
       
       </div>
       
-          <h1>TodoList</h1>
+          <h1>Todo List</h1>
           <TodoList
             Data={filteredTodos}
             setData={setData}

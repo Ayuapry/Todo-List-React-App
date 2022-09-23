@@ -40,7 +40,7 @@ export default function Edit({ setData, }) {
             <input type="text" value={task} onChange={onChange} placeholder="Edit Todo" />
           </div>
           <div>
-            <button onClick={onClick} className="btn adds">Submit</button>
+            <button onClick={onClick} className="btn adds">submit</button>
             <Link to="/" className='btn adds cancel'>cancel</Link>
           </div>
         </div>

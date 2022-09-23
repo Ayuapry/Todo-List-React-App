@@ -1,6 +1,5 @@
 import Todo from "./Todo";
 import React from "react";
-// import Data from '../data.json'
 
 export default function todoList({ Data, setData, filter, setFilteredTodos }) {
   const removeHandler = (id) => {
