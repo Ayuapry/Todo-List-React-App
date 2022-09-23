@@ -25,7 +25,6 @@ export default function todoList({ Data, setData, filter, setFilteredTodos }) {
   }
 
   const handleChekboxChange=(id)=>{
-    
     const newTodoList = Data.map(item =>{
       if(item.id=== Number(id))
       if(item.complete === false){

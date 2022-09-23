@@ -4,7 +4,8 @@ import { FaBook } from 'react-icons/fa';
 import Data from '../data.json'
 import '../App.css'
 
-export default function Edit({ setData, data }) {
+export default function Edit({ setData, }) {
+  // console.log(data)
   const navigate = useNavigate();
   const { id } = useParams();
   const item = Data.find((item) => 
@@ -12,16 +13,23 @@ export default function Edit({ setData, data }) {
   );
 
   const [task, setTask] = useState(item.task);
-  const editTaskHandler =() => {
     const newTask = { 
+      id,
       task: task, 
+      complete: false
     };
-    setData((data) => [...data, newTask]);
-    navigate("/");
-  }
+
+   
   const onChange = (e) => {
     setTask(e.target.value);
   }
+
+  const onClick = () => {
+    setTask(newTask);
+    navigate("/");
+  }
+  
+
 
   return (
     <div>
@@ -32,7 +40,7 @@ export default function Edit({ setData, data }) {
             <input type="text" value={task} onChange={onChange} placeholder="Edit Todo" />
           </div>
           <div>
-            <button onClick={editTaskHandler} className="btn adds">Submit</button>
+            <button onClick={onClick} className="btn adds">Submit</button>
             <Link to="/" className='btn adds cancel'>cancel</Link>
           </div>
         </div>
